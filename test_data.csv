@@ -1,0 +1,9 @@
+description,amount,tranasction_type,expected_category
+Payback for dinner,100.00,TRANSFER_INCOMING,TRANSFER
+Payback for lunch,-100.00,TRANSFER_OUTGOING,TRANSFER
+Order from Uber Eats,-40.00,PAYMENT,TAKEAWAY
+Order from Deliveroo,-40.00,PAYMENT,TAKEAWAY
+Order from Menulog,-40.00,PAYMENT,TAKEAWAY
+Woolworths order #123,-25.00,PAYMENT,GROCERIES
+Woolworths order #124,-90.00,PAYMENT,PETROL
+Something else,-400.00,PAYMENT,UNCATEGORISED
