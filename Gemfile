@@ -28,6 +28,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 group :development, :test do
+  gem 'factory_bot_rails', :require => false
   gem 'pry', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop'
   # A plugin for the RuboCop code style enforcing & linting tool.

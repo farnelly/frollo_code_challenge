@@ -2,7 +2,10 @@
 
 require 'rails_helper'
 
-# rubocop:disable Lint/EmptyBlock
 RSpec.describe Transaction, type: :model do
+  context 'when initialised with factory' do
+    it 'is valid with valid attributes' do
+      expect(described_class.new).to be_valid
+    end
+  end
 end
-# rubocop:enable Lint/EmptyBlock
