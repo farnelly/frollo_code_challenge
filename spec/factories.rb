@@ -6,7 +6,7 @@ FactoryBot.define do
     currency { 'AUD' }
     amount { 100.00 }
     description { 'This is a test' }
-    type { 'PAYMENT' }
+    transaction_type { 'PAYMENT' }
     category { 'Uncategorised' }
   end
 end
