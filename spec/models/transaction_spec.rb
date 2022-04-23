@@ -11,14 +11,14 @@ RSpec.describe Transaction, type: :model do
 
   describe 'after_save' do
     let!(:transaction) { build(:transaction) }
-  
+
     it 'enqueues background job to categorise transaction' do
       expect(CategorisationProcessJob).to receive(:perform_async)
-        .with(id: 1)
+        .with(1)
 
       transaction.save
 
-      expect(transaction.category).to eq('Uncategorised')
+      expect(transaction.reload.category).to eq('Uncategorised')
     end
   end
 end
