@@ -1,5 +1,80 @@
 # Frollo Backend Code Challenge
 
+# Introduction
+The application allows the users to list the transaction, get transaction and create a transaction.
+
+The application is built with ruby on rails.
+
+# Getting started
+### Built with
+This app is built with lots of love along with ruby `2.6.5`.
+
+Please follow [this link](https://github.com/rbenv/rbenv#installation) to install ruby version manager `rbenv` and install ruby on your local environment. 
+
+To confirm if the correct version of ruby is installed locally, please run the following.
+```
+ruby -v
+``
+
+## Browser Requirements
+
+| Browsers |
+| -------- |
+| Safari 6.1+|
+| Google Chrome 23+ |
+| Internet Explorer 11+ |
+| Firefox 16+ |
+
+### Install operational dependencies
+Operational dependencies are usually servers that your app uses to store sessions, cache or persistent data eg. postgresql database, redis server etc.
+
+```sh
+brew install postgres
+```
+`Brew` spits out post configuration that might be needed to run the servers after the installation. Please pay attention to that.
+
+
+### Clone the repo and change the directory to the project
+```sh
+git clone git@github.com:pratikghimire/frollo_code_challenge.git
+cd frollo_code_challenge
+```
+
+### Install dependencies
+```
+bundle install
+```
+
+### Prepare your database
+```sh
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:seed
+
+RAILS_ENV=test bundle exec rake db:test:prepare
+```
+
+### Run the app
+```
+bundle exec rails s
+```
+
+## Testing
+[Rspec](https://rspec.info/) is as a tool for TDD and writing tests. To run the automated tests, please run the following
+```
+bundle exec rspec
+```
+All specs should be green 🍏
+
+## Quality
+[Rubocop](https://rubocop.org/) is used for linting (style check). To check for lints, please run the following
+```
+bundle exec rubocop
+```
+Rubocop output should be green 🍏
+
+-------------
+
 ## Overview
 
 This is a simple code challenge to help assess a candidate's knowledge and experience with building RESTful APIs. This challenge will touch on a few concepts that we use frequently at Frollo. The main areas this challenge will assess are:
