@@ -1,0 +1,45 @@
+inherit_from: .rubocop_todo.yml
+
+# The behavior of RuboCop can be controlled via the .rubocop.yml
+# configuration file. It makes it possible to enable/disable
+# certain cops (checks) and to alter their behavior if they accept
+# any parameters. The file can be placed either in your home
+# directory or in some project directory.
+#
+# RuboCop will start looking for the configuration file in the directory
+# where the inspected file is and continue its way up to the root directory.
+#
+# See https://docs.rubocop.org/rubocop/configuration
+AllCops:
+  NewCops: enable
+  Exclude:
+    - db/**/*
+    - config/**/*
+    - bin/*
+    - vendor/**/*
+    - Gemfile
+
+  TargetRubyVersion:
+    2.6
+
+Layout/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Metrics/BlockLength:
+  # Disable this cop for describe and context blocks in spec files
+  IgnoredMethods: ['describe', 'context']
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
