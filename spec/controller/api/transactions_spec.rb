@@ -16,27 +16,26 @@ RSpec.describe Api::TransactionsController, type: :request do
     let(:transaction_list) { [transaction1, transaction2] }
 
     let(:list_transactions_response) do
-      transaction_list.as_json
-      # [
-      #   {
-      #       id: 1,
-      #       posted_date: '2021-01-01',
-      #       currency: 'AUD',
-      #       amount: 100.00,
-      #       description: 'This is a test',
-      #       type: 'PAYMENT',
-      #       category: 'Uncategorised'
-      #   },
-      #   {
-      #       id: 2,
-      #       posted_date: '2021-01-01',
-      #       currency: 'AUD',
-      #       amount: 100.00,
-      #       description: 'This is a test',
-      #       type: 'PAYMENT',
-      #       category: 'Uncategorised'
-      #   }
-      # ].as_json
+      [
+        {
+            id: 1,
+            posted_date: '2022-01-01',
+            currency: 'USD',
+            amount: 100.00,
+            description: 'This is a test',
+            type: 'PAYMENT',
+            category: 'Uncategorised'
+        },
+        {
+            id: 2,
+            posted_date: '2021-01-01',
+            currency: 'AUD',
+            amount: 100.00,
+            description: 'This is a test',
+            type: 'PAYMENT',
+            category: 'Uncategorised'
+        }
+      ].as_json
     end
 
     context 'when the request is made but no transactions exist' do
@@ -75,16 +74,15 @@ RSpec.describe Api::TransactionsController, type: :request do
     let(:transaction) { create(:transaction) }
 
     let(:transactions_response) do
-      transaction.as_json
-      # {
-      #       id: 1,
-      #       posted_date: '2021-01-01',
-      #       currency: 'AUD',
-      #       amount: 100.00,
-      #       description: 'This is a test',
-      #       type: 'PAYMENT',
-      #       category: 'Uncategorised'
-      #   }.as_json
+      {
+        id: 1,
+        posted_date: '2021-01-01',
+        currency: 'AUD',
+        amount: 100.00,
+        description: 'This is a test',
+        type: 'PAYMENT',
+        category: 'Uncategorised'
+      }.as_json
     end
 
     context 'when the transaction does not exist' do
