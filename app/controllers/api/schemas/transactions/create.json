@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "posted_date": {
+      "type": "string",
+      "format": "date",
+      "invalidMessage":  "'posted_date' must be a string"
+    },
+    "currency": {
+      "type": "string",
+      "enum": ["AUD", "USD", "GPD"]
+    },
+    "amount": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "type": {
+      "type": "string",
+      "enum": ["TRANSFER_OUTGOING", "TRANSFER_INCOMING", "PAYMENT", "OTHER"]
+    }
+  },
+  "required": [
+    "posted_date",
+    "currency",
+    "amount",
+    "description",
+    "type"
+  ]
+}

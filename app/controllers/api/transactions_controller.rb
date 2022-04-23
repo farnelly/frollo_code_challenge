@@ -2,8 +2,9 @@
 
 module Api
   # Transactions controller to list, get and create
-  class TransactionsController < ApplicationController
+  class TransactionsController < BaseController
     before_action :set_transaction, only: [:show]
+    before_action :validate_schema, only: [:create]
 
     def index
       @transactions = Transaction.all

@@ -28,6 +28,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 gem 'active_model_serializers'
+gem 'json-schema', '~> 2.8', '>= 2.8.1'
 
 group :development, :test do
   gem 'factory_bot_rails', :require => false

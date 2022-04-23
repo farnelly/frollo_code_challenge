@@ -18,22 +18,22 @@ RSpec.describe Api::TransactionsController, type: :request do
     let(:list_transactions_response) do
       [
         {
-            id: 1,
-            posted_date: '2022-01-01',
-            currency: 'USD',
-            amount: 100.00,
-            description: 'This is a test',
-            type: 'PAYMENT',
-            category: 'Uncategorised'
+          id: 1,
+          posted_date: '2022-01-01',
+          currency: 'USD',
+          amount: 100.00,
+          description: 'This is a test',
+          type: 'PAYMENT',
+          category: 'Uncategorised'
         },
         {
-            id: 2,
-            posted_date: '2021-01-01',
-            currency: 'AUD',
-            amount: 100.00,
-            description: 'This is a test',
-            type: 'PAYMENT',
-            category: 'Uncategorised'
+          id: 2,
+          posted_date: '2021-01-01',
+          currency: 'AUD',
+          amount: 100.00,
+          description: 'This is a test',
+          type: 'PAYMENT',
+          category: 'Uncategorised'
         }
       ].as_json
     end
@@ -118,17 +118,24 @@ RSpec.describe Api::TransactionsController, type: :request do
         amount: 100.0,
         description: 'This is a test',
         type: 'PAYMENT'
-      }.as_json
+      }
     end
 
-    xcontext 'when the request params is invalid' do
+    context 'when the request params is invalid' do
       let(:create_params) do
-        { currency: 'NPR' }.as_json
+        { currency: 'NPR' }
+      end
+
+      let(:error_message) do
+        {
+          'field' => '#/currency',
+          'message' => 'value "NPR" did not match one of the following values: AUD, USD, GPD'
+        }
       end
 
       it 'returns error' do
         create_transaction
-        expect(response.parsed_body).to eq({})
+        expect(response.parsed_body.dig('error', 'errors')).to include(error_message)
       end
 
       it 'returns unsuccessful HTTP status code' do
