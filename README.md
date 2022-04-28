@@ -14,7 +14,7 @@ Please follow [this link](https://github.com/rbenv/rbenv#installation) to instal
 To confirm if the correct version of ruby is installed locally, please run the following.
 ```
 ruby -v
-``
+```
 
 ## Browser Requirements
 
