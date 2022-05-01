@@ -8,7 +8,6 @@ module Api
 
     def index
       @transactions = Transaction.all
-
       render json: @transactions
     end
 
@@ -20,8 +19,8 @@ module Api
     # POST /api/transactions
     def create
       @transaction = Transaction.new(transaction_params)
-
       if @transaction.save
+        @transaction = Transaction.find(@transaction.id)
         render json: @transaction, status: :created
       else
         render json: @transaction.errors, status: :unprocessable_entity

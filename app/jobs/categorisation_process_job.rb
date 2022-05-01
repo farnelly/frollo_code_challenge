@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # Categorise transaction background job
-class CategorisationProcessJob
-  include Sidekiq::Job
+class CategorisationProcessJob < ApplicationJob
+  queue_as :default
 
   def perform(transaction_id)
     transaction = Transaction.find(transaction_id)

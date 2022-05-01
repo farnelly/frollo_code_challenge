@@ -24,7 +24,7 @@ RSpec.describe Api::TransactionsController, type: :request do
           amount: 100.00,
           description: 'This is a test',
           type: 'PAYMENT',
-          category: 'Uncategorised'
+          category: 'UNCATEGORISED'
         },
         {
           id: 2,
@@ -33,7 +33,7 @@ RSpec.describe Api::TransactionsController, type: :request do
           amount: 100.00,
           description: 'This is a test',
           type: 'PAYMENT',
-          category: 'Uncategorised'
+          category: 'UNCATEGORISED'
         }
       ].as_json
     end
@@ -81,7 +81,7 @@ RSpec.describe Api::TransactionsController, type: :request do
         amount: 100.00,
         description: 'This is a test',
         type: 'PAYMENT',
-        category: 'Uncategorised'
+        category: 'UNCATEGORISED'
       }.as_json
     end
 
